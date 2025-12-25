@@ -9,8 +9,8 @@ import { Profile } from './data/interfaces/profile.interfaces';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, ProfileCard],
-  template: `<pre>{{ data | json }}</pre>`,
-
+  
+  // template: `<pre>{{ data | json }}</pre>`,
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
