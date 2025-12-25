@@ -3,26 +3,27 @@ import { RouterOutlet } from '@angular/router';
 import { ProfileCard } from './common-ui/profile-card/profile-card';
 import { ProfileService } from './data/services/profile-service';
 import { JsonPipe } from '@angular/common';
+import { Profile } from './data/interfaces/profile.interfaces';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, JsonPipe, ProfileCard],
+  imports: [RouterOutlet, ProfileCard],
   template: `<pre>{{ data | json }}</pre>`,
 
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  // protected readonly title = signal('itproger');
+  
 
   profileService = inject(ProfileService)
-  profiles: any = []
+  profiles: Profile[] = []
 
   constructor() {
     this.profileService.getTestAccounts()
       .subscribe(val => {
-        this.profiles = val
+        this.profiles = val as Profile[]
       })
   }
 }

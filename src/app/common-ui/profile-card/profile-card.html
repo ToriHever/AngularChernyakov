@@ -1,9 +1,11 @@
+@if (profile) {
+
 <div class="profile-card">
     <div class="avatar-name">
         <img class="profile-card__avatar" src="/assets/img/Img.png" alt="avatar">
         
         <div class="profile-card__name">
-            <strong class="h6">Вика Пика</strong>
+            <strong class="h6"> {{ profile.firstName }} {{ profile.lastName }} </strong>
             <span class="subtitle">ryan.gosling</span>
         </div>
     </div>
@@ -20,3 +22,5 @@
         <button class="btn">Подписаться</button> 
     </div> 
 </div>
+
+}
